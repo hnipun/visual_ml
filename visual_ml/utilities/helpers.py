@@ -10,7 +10,7 @@ def euclidean_distance(x_, y_):
     """
     summation = 0
     for x, y in zip(x_, y_):
-        summation = math.pow(x - y, 2)
+        summation += math.pow(x - y, 2)
 
     return math.sqrt(summation)
 
@@ -24,3 +24,5 @@ def array_almost_equal(epsilon, x_, y_):
     :return:
     """
     return all([abs(x - y) < epsilon for x, y in zip(x_, y_)])
+
+# need to add similarity measurements and objective functions

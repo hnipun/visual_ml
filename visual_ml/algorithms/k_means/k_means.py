@@ -1,4 +1,3 @@
-import math
 import numpy as np
 from numpy import ndarray
 from visual_ml.utilities import array_almost_equal, euclidean_distance
@@ -28,7 +27,6 @@ class KMeans:
         :return:
         """
         centroids = np.zeros([self._K, self._n_features])
-        self._clusters = [1, 1, 1, 0, 0, 0]
         counts = [0] * self._K
         for x, c in zip(self._X, self._clusters):
             centroids[c] = (centroids[c] * counts[c] + x) / (counts[c] + 1)
@@ -76,3 +74,17 @@ class KMeans:
                 break
             else:
                 self._centroids = new_centroids
+
+
+if __name__ == '__main__':
+    import random
+    from scipy.io import loadmat
+
+    data = loadmat('samples.mat')['AllSamples']
+    centroids = []
+    for c in range(7):
+        centroids.append([random.randint(1, 10), random.randint(1, 10)])
+    print(centroids)
+
+    kmeans = KMeans(data, 7, centroids, 10)
+    kmeans.fit()
