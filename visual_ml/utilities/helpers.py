@@ -36,8 +36,4 @@ def gaussian(x, mean, sigma):
     """
     return (1 / math.sqrt(2 * math.pi)) * math.exp(-(x - mean) ** 2 / (2 * sigma ** 2))
 
-
-
-
-
 # need to add similarity measurements and objective functions
