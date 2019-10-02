@@ -1,4 +1,5 @@
 import numpy as np
+
 from numpy import ndarray
 from visual_ml.utilities import array_almost_equal, euclidean_distance
 
