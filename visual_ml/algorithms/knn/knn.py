@@ -3,7 +3,7 @@ import heapq
 
 from numpy import ndarray
 from statistics import mode
-from typing import Dict
+
 from visual_ml.utilities import euclidean_distance
 
 
